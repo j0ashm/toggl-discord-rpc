@@ -5,8 +5,17 @@ const rpc = new RPC.Client({
 });
 const axios = require('axios')
 
+rpc.on('ready', () => {
+    rpc.setActivity({
+        details: makeRequest(),
+        startTimestamp: new Date(),
+        largeImageKey: 'laptop'
+    });
+})
+
 const makeRequest = async () => {
     var runningJob = ''
+    var duration = ''
     try {
         await axios.get('https://api.track.toggl.com/api/v8/time_entries/current', {
             auth: {
@@ -17,6 +26,7 @@ const makeRequest = async () => {
         }).then((res) => {
             const entries = Object.entries(res.data.data)
             runningJob += entries[5][1]
+            duration += entries[3][1]
             console.log(runningJob)
         })
     } catch(error) {
@@ -26,4 +36,4 @@ const makeRequest = async () => {
     return runningJob
 }
 
-console.log(makeRequest())
+console.log(new Date().toTimeString())
