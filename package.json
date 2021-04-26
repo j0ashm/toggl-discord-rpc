@@ -1,0 +1,25 @@
+{
+  "name": "toggl-discord-rpc",
+  "version": "1.0.0",
+  "description": "Show off what you're tracking in Toggl Track to all your friends on Discord!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JustinOleskii/toggl-discord-rpc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JustinOleskii/toggl-discord-rpc/issues"
+  },
+  "homepage": "https://github.com/JustinOleskii/toggl-discord-rpc#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "discord-rpc": "^3.2.0",
+    "dotenv": "^8.2.0",
+    "register-scheme": "github:devsnek/node-register-scheme"
+  }
+}
